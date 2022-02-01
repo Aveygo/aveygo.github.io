@@ -1,0 +1,72 @@
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Aveygo/JsNewHope/NewHope.js"></script>
+
+<html>
+    <head></head>
+    <body>
+        <h1> JSNewHope Example</h1>
+        <button onclick="start()" style='height:40px; width:100px'>Start!</button>
+    </body>
+    <div id='events'>
+
+    </div>
+</html>
+
+<script>
+
+
+
+function createDivEvent(i, heading, text) {
+    text = text.toString()
+    let wrapper = document.createElement("div");
+    wrapper.id = 'EVENT'
+    let height = 40 + Math.round(text.length)
+    if (height > 300) {
+        height = 300
+    }
+    wrapper.style.cssText = `width: 1000px; height: ${height}px; background: lightgrey; margin: left; margin-top:20px; padding-top:10px; padding-left:5px; font-family:"Courier New";`
+
+    let id = document.createElement("div");
+    id.innerHTML  = i
+    id.style.cssText = `width: 5%; height: ${height}; float: left; text-align: center; font-size:25px;`
+
+    let header = document.createElement("div");
+    header.innerHTML  = heading
+    header.style.cssText = `width: 90%; height: ${40}px; padding-left:10%; font-size:25px;`
+
+    let body = document.createElement("textarea");
+    body.innerHTML  = text
+    body.style.cssText = `width: 90%; height: ${height-40}px; float: right; font-size:20px; overflow: hidden; border-style: hidden; background-color:lightgrey; margin-right:10px;`
+
+        
+    wrapper.appendChild(id);
+    wrapper.appendChild(header);
+    wrapper.appendChild(body);
+    return wrapper
+    
+}
+
+function addEvent (i, heading, text) {
+    newDiv = createDivEvent(i, heading, text)
+    let currentDiv = document.getElementById("events");
+    currentDiv.append(newDiv)
+}
+function removeElement(id) {
+    var elem = document.getElementById(id);
+    return elem.parentNode.removeChild(elem);
+}
+
+async function start() {
+    const myNode = document.getElementById("events");
+    myNode.innerHTML = '';
+    
+    alice_message = await NewHope.keygen() 
+    addEvent('1.', 'Alice generates seed and p coefficient', alice_message)
+    bob_message = await NewHope.sharedb(alice_message)
+    addEvent('2.', 'Bob generates C and B coefficients from 1.', bob_message)
+    addEvent('3.', 'Bob calculates shared key from 1.', NewHope.toHexString( NewHope.b_key ))
+    await NewHope.shareda(bob_message)
+    addEvent('4.', 'Alice calculates shared key from 2.', NewHope.toHexString( NewHope.a_key ))
+
+}
+
+</script>
