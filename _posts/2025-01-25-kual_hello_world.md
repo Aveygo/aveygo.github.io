@@ -60,12 +60,21 @@ fn main() {
 }
 ```
 
+> Make sure you have docker installed, running, and your account is added to the docker group, and then install [Cross](https://github.com/cross-rs/cross)
+{: .prompt-warning }
+
+Add the arm target to rust
+
 ```bash
 rustup target add arm-unknown-linux-musleabi
 ```
 
+<br />
+
+Finally compile for the kindle
+
 ```bash
-RUSTFLAGS="-C target-feature=+crt-static" cargo build --target arm-unknown-linux-musleabi --release
+RUSTFLAGS="-C target-feature=+crt-static" cargo cross --target arm-unknown-linux-musleabi --release
 ```
 
 # Final check
@@ -110,7 +119,7 @@ At the end, it should look like this on the kindle:
 
 # Starting
 
-Eject, then on the kindle go to KUAL -> "Hello World" -> "Hello", and you should see a messages show in the corner if successful.
+Eject, then on the kindle go to KUAL -> "Hello World" and you should see a messages show in the top left corner if successful.
 
 # Closing Notes
 

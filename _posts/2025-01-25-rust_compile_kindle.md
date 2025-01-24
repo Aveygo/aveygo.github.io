@@ -25,7 +25,7 @@ After some tinkering and exploring existing binaries, I found which target the k
 RUSTFLAGS="-C target-feature=+crt-static" cross build --target arm-unknown-linux-musleabi --release
 ```
 
-I used [cross](https://github.com/cross-rs/cross) to avoid having to deal with nix pain, but you should be able to just use cargo if available.
+I used [cross](https://github.com/cross-rs/cross) to avoid having to deal with a lot of additional pain.
 
 # Final notes
 You can find my finished project, [here](https://github.com/Aveygo/KindleDashboard).
