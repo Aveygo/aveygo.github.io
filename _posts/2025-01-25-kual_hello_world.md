@@ -74,7 +74,7 @@ rustup target add arm-unknown-linux-musleabi
 Finally compile for the kindle
 
 ```bash
-RUSTFLAGS="-C target-feature=+crt-static" cargo cross --target arm-unknown-linux-musleabi --release
+RUSTFLAGS="-C target-feature=+crt-static" cross --target arm-unknown-linux-musleabi --release
 ```
 
 # Final check
@@ -119,7 +119,7 @@ At the end, it should look like this on the kindle:
 
 # Starting
 
-Eject, then on the kindle go to KUAL -> "Hello World" and you should see a messages show in the top left corner if successful.
+Eject, then on the kindle go to KUAL -> "Hello World" and you should see a message show in the top left corner if successful.
 
 # Closing Notes
 
