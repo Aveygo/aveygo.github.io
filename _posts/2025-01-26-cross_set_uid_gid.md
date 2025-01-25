@@ -3,6 +3,7 @@ title: Fixing rust cross "Permission denied (os error 13)"
 date: 2025-01-25
 categories: [rust]
 tags: []
+description: How to fix linux file permission errors when using cross-rs/cross for rust cross compilation
 ---
 
 Today I spent 1 hour trying to solve this error:

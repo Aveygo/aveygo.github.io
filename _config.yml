@@ -27,8 +27,12 @@ social:
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
 
+analytics:
+  goatcounter:
+    id: aveygoblog
+
 pageviews:
-  provider: https://aveygoblog.goatcounter.com/count
+  provider: goatcounter
 
 theme_mode: dark
 cdn:
