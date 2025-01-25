@@ -1,7 +1,7 @@
 ---
 title: KUAL Hello World in Rust
 date: 2025-01-24
-categories: [tutorial]
+categories: [tutorial rust kindle]
 tags: [simple]
 description: An introduction into a basic KUAL App with rust binaries
 ---

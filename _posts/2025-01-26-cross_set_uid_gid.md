@@ -1,7 +1,7 @@
 ---
 title: Fixing rust cross "Permission denied (os error 13)" 
 date: 2025-01-25
-categories: []
+categories: [rust]
 tags: []
 ---
 
