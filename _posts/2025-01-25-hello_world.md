@@ -1,7 +1,7 @@
 ---
 title: Hello World
 date: 2025-01-24
-categories: []
+categories: [meta]
 tags: []
 ---
 
