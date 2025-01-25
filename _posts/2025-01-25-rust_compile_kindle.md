@@ -1,7 +1,7 @@
 ---
 title:  Rust Compiling for the Kindle
 date: 2025-01-24
-categories: [kindle rust]
+categories: [kindle, rust]
 tags: [simple]
 description: How to compile a rust binary that can run on the kindle natively 
 ---
