@@ -1,6 +1,6 @@
 ---
 title: Why I'm giving up on NixOS
-date: 2025-01-25
+date: 2025-01-27
 categories: [nix, rant]
 tags: []
 description: The good, the bad, and the ugly of NixOS; why I am going back to Arch. 
