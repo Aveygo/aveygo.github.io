@@ -3,7 +3,7 @@ title: Setting up a SSH server
 date: 2025-04-11
 categories: [tutorial]
 tags: [easy]
-description: Yet another guide on install OpenSSH (Windows & Linux)
+description: Yet another guide on installing OpenSSH (Windows & Linux)
 ---
 
 # What is this post about?
