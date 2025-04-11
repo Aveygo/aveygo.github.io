@@ -2,7 +2,7 @@
 title: Creating a laptop development environment with the power of a desktop PC
 date: 2025-04-11
 categories: [tutorial]
-tags: [easy]
+tags: [medium]
 description: We will be setting up a remote VSCode environment that can be accessed anywhere with Tailscale.
 ---
 
@@ -23,7 +23,7 @@ To replicate my setup, all you'll need is:
 1. The <font color="C97064"><b>Client</b></font> computer (the one that you'll be coding on, eg: a laptop)
 2. The <font color="32965D"><b>Host</b></font> computer (the one that you wish you were coding on, eg: a desktop)
 
-> The <font color="32965D"><b>Host</b></font> must have a ssh server running. If you can run ```ssh your-host-username@localhost``` on the <font color="32965D"><b>Host</b></font>, then you should be golden! 
+> The <font color="32965D"><b>Host</b></font> must have a ssh server running. If you can run ```ssh your-host-username@localhost``` on the <font color="32965D"><b>Host</b></font>, then you should be golden! See my [setting up ssh]({% link _posts/2025-04-12-setup_ssh_server.md %}) guide if you need more help.
 {: .prompt-warning }
 
 # Tailscale
