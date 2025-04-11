@@ -43,6 +43,11 @@ And thats it! That should be the hardest part of the setup. What we've done is a
 
 To test this connection, you can try ssh-ing into the <font color="32965D"><b>Host</b></font> from the <font color="C97064"><b>Client</b></font> with the command: ```ssh your-host-username@host```. If this fails, then you might need to go to the tailscale [dashboard](https://login.tailscale.com/admin) and check for any errors or change the device names.
 
+You should up up with something that looks like:
+
+![alt text](assets/media/remote_explorer/tailscale.png){: width="500"}
+
+
 # VSCode
 
 This will be the 'developer environment' that will be shared between the two computers. Make sure to [install VSCode](https://code.visualstudio.com/download) on both the <font color="C97064"><b>Client</b></font> **and** <font color="32965D"><b>Host</b></font>.
