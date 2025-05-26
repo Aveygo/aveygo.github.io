@@ -42,10 +42,20 @@ I have no clue how long I'll be able to keep this up, but I'll try to remember u
 # March contenders
 
 !["Water painting of woman grieving pet cat"](assets/media/meme_calendar/March/talkaboutyou.jpg){: width="200"}
-w
+
 !["AI edit of JDVance face to look more childlike"](assets/media/meme_calendar/March/jdvance.png){: width="200"}
 
 !["An image of bottled water, ice, and a banana"](assets/media/meme_calendar/March/morning-routine.webp){: width="200"}
 
 !["Ghibli style image of a meme"](assets/media/meme_calendar/March/Ghibli-Style-OpenAI.webp){: width="200"}
+
+# April contenders
+
+!["Minecraft movie"](assets/media/meme_calendar/April/minecraft_movie.png){: width="200"}
+!["Pope"](assets/media/meme_calendar/April/pope.png){: width="200"}
+
+
+# May contenders
+!["Job application"](assets/media/meme_calendar/May/job_application.png){: width="200"}
+
 
