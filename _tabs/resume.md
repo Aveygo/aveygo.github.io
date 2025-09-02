@@ -12,8 +12,6 @@ function getUserKeyFromUrl() {
   const urlParams = new URLSearchParams(window.location.search);
   
   const userKey = urlParams.get('user_key');
-
-  console.log("Got user key " + userKey)
   
   if (!userKey) {
     return null;
