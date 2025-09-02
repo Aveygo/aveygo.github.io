@@ -17,7 +17,7 @@ function getUserKeyFromUrl() {
     return null;
   }
   
-  fetch(`https://archlinux.tailfc675.ts.net/?user_key=${encodeURIComponent(userKey)}`, {
+  fetch(`https://resume.tailfc675.ts.net/?user_key=${encodeURIComponent(userKey)}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
