@@ -30,6 +30,6 @@ function getUserKeyFromUrl() {
   return userKey;
 }
 
-getUserKeyFromUrl()
+getUserKeyFromUrl();
 
 </script>
