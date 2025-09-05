@@ -7,11 +7,11 @@ timezone: Australia/Sydney
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Aveygo's Blog
-tagline: AKA Gregory Taylor
+title: Greg's Blog
+tagline: AI and more
 
 description: >-
-  Blog posts written by Gregory Taylor, undergrad computer science programmer at University of Technology, Sydney 
+  Blog posts written by Gregory Taylor, undergrad computer science programmer at University of Technology, Sydney
 
 url: "https://aveygo.github.io"
 
@@ -69,7 +69,7 @@ pwa:
   cache:
     enabled: true
     deny_paths:
- 
+
 paginate: 10
 baseurl: ""
 
