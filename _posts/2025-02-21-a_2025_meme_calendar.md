@@ -56,6 +56,25 @@ I have no clue how long I'll be able to keep this up, but I'll try to remember u
 
 
 # May contenders
+
 !["Job application"](assets/media/meme_calendar/May/job_application.png){: width="200"}
+
+
+# June contenders
+
+!["Man pointing to himself"](assets/media/meme_calendar/June/pointing_self.jpg){: width="200"}
+
+# July contenders
+
+!["CEO hugging HR"](assets/media/meme_calendar/July/hr_ceo.jpeg){: width="200"}
+
+# August contenders
+
+!["Robot"](assets/media/meme_calendar/August/clanker.jpg){: width="200"}
+
+!["Japan"](assets/media/meme_calendar/August/japan.png){: width="200"}
+
+!["Monkey"](assets/media/meme_calendar/August/thinking_monkey.jpg){: width="200"}
+
 
 
