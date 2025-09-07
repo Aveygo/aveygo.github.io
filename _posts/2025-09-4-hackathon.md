@@ -1,5 +1,5 @@
 ---
-title: How I won my first AI Hackathon
+title: How a dentist helped me win my first AI Hackathon  
 date: 2025-09-05
 categories: [Machine Learning, Automated Decisions]
 tags: [AI, Hackathon]
@@ -92,12 +92,12 @@ Even after hours of manually compiling libraries, it ended up being not fast eno
 
 ![3 people presenting](assets/media/hackathon/presenting.png){:style="display:block; margin-left:auto; margin-right:auto; width: 50%; max-height: 600px;"}
 
-After many hours of work, this part was the most scary **and** the most rewarding. Being able to communicate under pressure, handling diffucult questions, all while remaining confident and showcasing the features of your work is one of the experiences of all time.
+After many hours of work, this part was the most scary **and** the most rewarding. Being able to communicate under pressure, handling difficult questions, all while remaining confident and showcasing the features of your work is one of the experiences of all time.
 
 Looking back, there are certainly a couple moments that I wish I could've been more prepared for, and I would summarize them into three lessons I learned:
 1. Make your slides as minimal as possible; try to sell your idea, rather than explain it.
 2. Keep it short and sweet
-3. Run rehersals until you know the slides backwards.
+3. Run rehearsals until you know the slides backwards.
 
 But, at the end of the day, you can get a lot done with some faith, courage, and caffeine. 
 
