@@ -74,7 +74,7 @@ rustup target add arm-unknown-linux-musleabi
 Finally compile for the kindle
 
 ```bash
-RUSTFLAGS="-C target-feature=+crt-static" cross --target arm-unknown-linux-musleabi --release
+RUSTFLAGS="-C target-feature=+crt-static -C opt-level=s -C strip=symbols" cross --target arm-unknown-linux-musleabi --release
 ```
 
 # Final check
