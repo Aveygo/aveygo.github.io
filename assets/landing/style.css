@@ -1,0 +1,368 @@
+/*
+Ed safe css because it hates vars and stuff
+*/
+
+@font-face {
+  font-family: nes;
+  src: url('fonts/nes_font.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: roboto;
+  src: url('fonts/roboto_font.ttf');
+  font-display: swap;
+}
+
+html {
+  background-color: #121212;
+  color: #f0f0f0;
+
+  overflow: scroll;
+  overflow-x: hidden;
+
+  height: 152vh;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  min-width: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+
+  background-image: url('images/background.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  top: 5vh;
+  transform: translate3d(0, 0, 0);
+
+  object-fit: cover;
+
+  position: absolute;
+  opacity: 0.1;
+  z-index: -1;
+
+  /* Disabled due to CSS 2.1 specs ... */
+  /*image-rendering: pixelated;*/
+}
+
+#wrapper {
+  width: 100%;
+  max-width: 900px;
+
+  margin-bottom: 200px;
+
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.tile {
+  flex-basis: 600px;
+  flex-grow: 1;
+
+  min-height: 200px;
+
+  opacity: 0.8;
+
+  border-radius: 10px;
+  padding-bottom: 20px;
+
+  position: relative;
+  z-index: 1;
+  transform-style: preserve-3d;
+}
+
+.tile::before {
+  border-radius: inherit;
+  content: '';
+
+  height: calc(100% - 2px);
+  width: calc(100% - 2px);
+  margin-left: 1px;
+  margin-top: 1px;
+
+  position: absolute;
+
+  background-image: radial-gradient(rgba(50, 255, 150, 0.1) 1px, transparent 0%),
+    radial-gradient(rgba(50, 255, 150, 0.1) 1px, transparent 0%);
+  background-position: 1px 1px, 5px 5px;
+  background-size: 10px 10px;
+  background-color: #121212;
+  z-index: -1;
+}
+
+.fly_in:nth-child(even) {
+  animation: slide-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.fly_in:nth-child(odd) {
+  animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+.tile .content {
+  font-family: roboto;
+  font-size: 1em;
+  margin: 10px;
+  padding: 10px;
+}
+
+.tile:hover {
+  opacity: 1;
+}
+
+.small_tile {
+  flex-basis: 200px;
+}
+
+.tile img {
+  opacity: 1;
+  object-fit: contain;
+  margin-top: 10px;
+  max-height: 200px;
+  height: calc(100% - 50px);
+  width: calc(100% - 50px);
+  margin-left: 25px;
+  margin-right: 25px;
+  min-height: 300px;
+}
+
+.footer {
+  font-family: nes;
+  color: rgba(50, 255, 150, 0.5);
+  min-height: 40px;
+  font-size: 15px;
+}
+
+li {
+  list-style-type: none;
+  margin-bottom: 10px;
+
+  margin-left: 25px;
+  margin-right: 25px;
+
+  font-family: nes;
+  font-size: 15px;
+  width: fit-content;
+}
+
+li::before {
+  content: '*';
+  position: absolute;
+  left: 2em;
+}
+
+li.nav_text::before {
+  content: '>';
+}
+
+.content li {
+  font-family: roboto;
+  font-size: 1em;
+}
+
+ul {
+  margin-left: 25px;
+  margin-right: 25px;
+  padding: 0;
+}
+
+.content a {
+  color: rgba(50, 255, 150, 1);
+}
+
+.nav_text {
+  font-size: 1em;
+}
+
+.selectable:hover {
+  background-color: rgba(50, 255, 150, 0.5);
+  color: rgba(50, 255, 150, 1);
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.main_logo {
+  font-family: nes;
+  opacity: 0.9;
+  width: 100%;
+  font-size: 4em;
+  text-align: center;
+  color: black;
+
+  text-shadow: 1px 3px rgba(50, 255, 150, 1), 3px 9px rgba(50, 255, 150, 0.1),
+    -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255),
+    1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 255, 255);
+}
+
+.main_logo:hover {
+  opacity: 1;
+}
+
+.glow_text {
+  color: rgba(50, 255, 150, 0.1);
+  text-shadow: 0 0 1px rgba(50, 255, 150, 1), 0 0 1px rgba(50, 255, 150, 1),
+    0 0 1px rgba(50, 255, 150, 1), 0 0 1px rgba(50, 255, 150, 1),
+    0 0 50px rgba(50, 255, 150, 1);
+}
+
+.glow_box {
+  box-shadow: 0 0 1px rgba(50, 255, 150, 0.5), 0 0 1px rgba(50, 255, 150, 0.5),
+    0 0 1px rgba(50, 255, 150, 0.5), 0 0 1px rgba(50, 255, 150, 0.5),
+    0 0 40px rgba(50, 255, 150, 0.2);
+}
+
+.tile p {
+  margin: auto;
+  background-color: #121212;
+}
+
+.tile h1 {
+  font-family: nes;
+  color: rgba(50, 255, 150, 1);
+  font-size: 18px;
+  margin: 10px;
+}
+
+.tile h2 {
+  font-family: nes;
+  color: rgba(50, 255, 150, 1);
+  font-size: 15px;
+  padding-top: 10px;
+  padding-left: 30px;
+  opacity: 0.9;
+}
+
+.tile .bold {
+  font-weight: bold;
+}
+
+.tile .qrcode {
+  width: 100%;
+  text-align: center;
+  color: rgba(50, 255, 150, 0.5);
+  font-size: 9px;
+  line-height: 10px;
+}
+
+.rain_drop {
+  position: absolute;
+  bottom: 100%;
+
+  border-style: solid;
+  border-width: 2px;
+  border-color: transparent;
+  border-right-color: rgba(255, 255, 255, 0.1);
+  border-right-width: 50px;
+
+  transform-origin: 100% 0%;
+  animation-name: rain;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Disabled due to css 2.1 specs, moved to js */
+/*
+@media(prefers-reduced-motion) {
+  .tile:nth-child(even) {
+      animation: none;
+      animation-duration: 0s;
+  }
+
+  .tile:nth-child(odd) {
+      animation: none;
+      animation-duration: 0s;
+  }
+
+  .rain_drop {
+      animation: none;
+  }
+}
+*/
+
+table {
+  font-family: nes;
+  max-width: 100%;
+}
+
+th,
+td {
+  padding-left: 10px;
+  text-align: left;
+}
+
+.centered {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: stretch;
+  text-align: center;
+}
+
+.caption {
+  width: 90%;
+  font-family: nes;
+  font-size: 0.8em;
+  color: rgba(50, 255, 150, 0.5);
+  margin: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+@keyframes rain {
+  0% {
+    transform: rotate(95deg) translateX(0);
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate(95deg) translateX(150vh);
+    opacity: 0;
+  }
+}
