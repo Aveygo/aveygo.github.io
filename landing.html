@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="assets/landing/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
+
+    <title>Gregory Taylor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="description" content="Gregory Taylor's landing page">
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+
+    <link rel="preload" href="assets/landing/fonts/nes_font.ttf" as="font" crossorigin="anonymous">
+    <link rel="preload" href="assets/landing/fonts/roboto_font.ttf" as="font" crossorigin="anonymous">
+  </head>
+  <body>
+    <div id="rain"></div>
+
+    <div id="wrapper">
+      <p class="main_logo selectable">
+        <a href="index.html">Home</a>
+      </p>
+
+      <div class="tile glow_box fly_in">
+        <h1>About</h1>
+        <div class="content">
+          <p>
+            <i>Welcome to my landing page!</i>
+          </p>
+          <br>
+          <p>
+            My name is Gregory Taylor and I'm a CS undergrad (soon to be graduate) at the University of Technology,
+            Sydney.
+          </p>
+          <br>
+          <p>
+            I'm also currently very much unemployed and looking for work, so if you are an employer then I can't
+            recommend enough checking out my other sites/socials from the navbar ->
+          </p>
+        </div>
+      </div>
+      <div class="tile small_tile glow_box fly_in">
+        <h1>Nav</h1>
+        <ul>
+          <li class="selectable nav_text"><a href="http://aveygo.github.io/">My Blog</a></li>
+          <li class="selectable nav_text"><a href="https://github.com/aveygo">My Github</a></li>
+          <li class="selectable nav_text"><a href="https://www.linkedin.com/in/gregory-taylor-au/">My Linkedin</a></li>
+        </ul>
+      </div>
+
+      <div class="tile small_tile glow_box fly_in">
+        <h1>Crypto</h1>
+        <pre class="qrcode">
+  ▄▄▄▄▄▄▄  ▄   ▄▄▄▄  ▄▄ ▄▄▄▄▄▄▄
+  █ ▄▄▄ █ ▀█▄█▀  ▀█ ▄ ▀ █ ▄▄▄ █
+  █ ███ █ ▀▀▄▀▄▀▀▀▄▀▄▄▄ █ ███ █
+  █▄▄▄▄▄█ █ █ ▄▀▄▀█▀█ █ █▄▄▄▄▄█
+  ▄▄▄▄▄ ▄▄▄▄▄ █ █▄█▄ ▀█▄ ▄ ▄ ▄
+  ▀▀ ▄ █▄█▀█ ▄▄ ▀██▀█▀█ ▀▀█   ▀
+  █▄ ▄▄▀▄███▀█  ▀▀▄▄██▀  █▀█▄▀
+  ▀▀▀  ▄▀▄▀█ ▀█▄▄▄█ ▀▄█▀██▄▄ ▀
+  ▀█▄▀▄▄▄ ██▄ █▀▄▄█▄ ▄▀▀▀█▀▄▄▀
+  █ █ █ ▄▄▄ ▄▄▄  ▄▀▄ ▀█▀▀█▀ █ ▀
+  █ ███▄▄█ ▄▄█  ▀██▄███▄▄█▄ ▄█▄
+  ▄▄▄▄▄▄▄ █ ▄ ▀██▄▄▀ ▄█ ▄ ███▀▀
+  █ ▄▄▄ █ ▄▄▀ █▀▄▄█▄ ▀█▄▄▄█ ▄ ▀
+  █ ███ █ ██▀▄▄  ▄█ ▀▀▀█▄▄▄███▀
+  █▄▄▄▄▄█ █▄ █  ▀█▄ ▀▄▀▄█▀▀█▄▀
+                  </pre>
+      </div>
+      <div class="tile glow_box fly_in">
+        <h1>GITHUB</h1>
+        <h2>Some interesting projects...</h2>
+        <div class="centered">
+          <table>
+            <tr>
+              <td class="selectable">
+                <a href="https://github.com/Aveygo/AstroSleuth" target="_blank">Astro Sleuth</a>
+              </td>
+              <td class="glow_text">[ 34 stars ]</td>
+            </tr>
+            <tr>
+              <td class="selectable">
+                <a href="https://github.com/Aveygo/KindleDashboard" target="_blank">Kindle Dashboard</a>
+              </td>
+              <td class="glow_text">[ 6 stars ]</td>
+            </tr>
+            <tr>
+              <td class="selectable">
+                <a href="https://github.com/Aveygo/NuclearSmoke" target="_blank">Nuclear Smoke</a>
+              </td>
+              <td class="glow_text">[ 1 stars ]</td>
+            </tr>
+            <tr>
+              <td class="selectable"><a href="https://github.com/Aveygo/AutoInt" target="_blank">Auto Int</a></td>
+              <td class="glow_text">[ 1 stars ]</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="tile glow_box fly_in">
+        <h1>News</h1>
+        <h2>Latest headlines</h2>
+        <ul id="news">
+          <li class="selectable" id="news_tmp">Failed to fetch!</li>
+        </ul>
+      </div>
+      <div class="tile glow_box fly_in">
+        <h1>Markets</h1>
+        <h2>Weekly changes</h2>
+        <div class="centered">
+          <table>
+            <tr>
+              <td>BTC</td>
+              <td class="glow_text" id="BTC_price">WAIT</td>
+            </tr>
+            <tr>
+              <td>ETH</td>
+              <td class="glow_text" id="ETH_price">WAIT</td>
+            </tr>
+            <tr>
+              <td>5YUS</td>
+              <td class="glow_text" id="5YUS_price">WAIT</td>
+            </tr>
+            <tr>
+              <td>2YUS</td>
+              <td class="glow_text" id="2YUS_price">WAIT</td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td>SPX500</td>
+              <td class="glow_text" id="SPX500_price">WAIT</td>
+            </tr>
+            <tr>
+              <td>DOWJNS</td>
+              <td class="glow_text" id="DOWJNS_price">WAIT</td>
+            </tr>
+            <tr>
+              <td>NSDQ100</td>
+              <td class="glow_text" id="NSDQ100_price">WAIT</td>
+            </tr>
+            <tr>
+              <td>AUS200</td>
+              <td class="glow_text" id="AUS200_price">WAIT</td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td>GOLD</td>
+              <td class="glow_text" id="GOLD_price">WAIT</td>
+            </tr>
+            <tr>
+              <td>SLV</td>
+              <td class="glow_text" id="SLV_price">WAIT</td>
+            </tr>
+            <tr>
+              <td>OIL</td>
+              <td class="glow_text" id="OIL_price">WAIT</td>
+            </tr>
+            <tr>
+              <td>GAS</td>
+              <td class="glow_text" id="GAS_price">WAIT</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="tile glow_box footer fly_in">
+        <div class="centered">
+          <p>&copy; 2025 Gregory Taylor. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/landing/main.js"></script>
+    <script src="assets/landing/fetchables.js"></script>
+
+    <div class="background"></div>
+  </body>
+</html>
