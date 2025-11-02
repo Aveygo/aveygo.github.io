@@ -8,8 +8,8 @@ If you are here, then you're probably interested in learning some more [about me
 Make sure to check out [my LinkedIn](https://www.linkedin.com/in/greg-taylor-au) for the most up-to-date information about what I'm up to.
 
 <script>
-console.log("oh, hello there. if you can see this message, then you probably already know that you've just hit my analytics endpoint.")
-console.log("feel free to hire me or whatever, you know my email ;)")
+console.log("oh, hello there. if you can see this message, then you probably already know that you've just hit my analytics endpoint.");
+console.log("feel free to hire me or whatever, you know my email ;)");
 
 function getUserKeyFromUrl() {
   const urlParams = new URLSearchParams(window.location.search);
