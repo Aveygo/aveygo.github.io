@@ -67,7 +67,7 @@ While you may think I wrote this blog to be about ballistics calculators, I also
 
 ![SDF](assets/media/ballistics/optim.jpg){:style="display:block; margin-left:auto; margin-right:auto; width: 70%;"}
 
-We really only care about what the projectile is doing when it's close to the target. As we approach closer and closer to the target, we care a lot more about the accuracy of our simulation and what it's doing. The interesting thing is that this is exactly the same issue that graphics programmers have. When a video game uses ray marching to render objects, the color of the ray only chances when it hits a surface; everything else doesn't matter, we only care about where and when the ray hits an object and nothing else beforehand.
+We really only care about what the projectile is doing when it's close to the target. Only when we approach closer and closer to the target, we start care a lot more about the accuracy of our simulation. The interesting thing is that this is exactly the same issue that graphics programmers have. When a video game uses ray marching to render objects, the color of the ray only chances when it hits a surface; everything else doesn't matter, we only care about where and when the ray hits an object and nothing else beforehand.
 
 ![SDF](assets/media/ballistics/SDF.png){:style="display:block; margin-left:auto; margin-right:auto; width: 70%;"}
 
@@ -79,7 +79,7 @@ Thus, to make ray marching as efficient as possible we can take larger steps whe
 
 Before optimizing anything, we need a baseline implementation. In my case, Rust was the obvious choice for its superior combination of memory safety and performance.
 
-Here, the 'naive' approach uses fixed timesteps, where the simulation is advanced by a small amount, recalculate forces, and repeating.
+Here, the 'naive' approach uses fixed timesteps, where the simulation is advanced by a small amount, recalculates forces, and repeats forever.
 
 ```rust
 fn step(&mut self, dt: f64) {
@@ -98,7 +98,7 @@ while projectile.position.x < target.x {
 }
 ```
 
-This works, but for a long trajectory you'll need tens of thousands, if not millions of steps for most long distance targets.
+This works, but for a long trajectory you'll need tens of thousands (if not millions) of steps for most long distance targets.
 
 ## SDF-Inspired Adaptive Stepping
 
@@ -116,7 +116,7 @@ fn adaptive_step(&mut self, target: Vec3) {
 }
 ```
 
-Here, we take steps that are half the distance to the target. This allows us to go from thousands of fixed steps to at most a dozen.
+Here, we try and halve the distance to our target at every step. Even though the force calculations are almost identical, we now only compute a fraction of the trajectory.
 
 # Results
 
@@ -140,13 +140,13 @@ Now that we have a performant and minimal physics simulation, we can begin makin
 
 Because each trajectory calculation is completely independent it can be easily parallelised on a GPU.
 
-This allows us to run a far more sophisticated analysis than would ever be practical on a CPU for "free" (excluding memory overhead). This means that instead of calculating one "perfect" trajectory, we calculate tens of thousands with slight variations in muzzle velocity, wind estimates, and barrel condition. The result is a probability distribution of impact points rather than a single prediction, allowing us to determine the probability of hitting a given target.
+This allows us to run a far more sophisticated analysis than would ever be practical on a CPU for "free" (excluding memory overhead). This means that instead of calculating one perfect trajectory, we calculate tens of thousands with slight variations in muzzle velocity, wind estimates, and barrel condition. The result is a probability distribution of impact points rather than a single prediction, allowing us to determine the probability of hitting a given target.
 
 ### Dealing with Moving Targets
 
-Circling back to the beginning of this blog, this project was meant to simulate collisions with drones; but what if we could try and find optimal launch angles? 
+Circling back to the beginning of this blog, this project was meant to simulate ballistic engagements with drones; but what if we could try and find optimal launch angles? 
 
-Unfortunately this is leading towards ITAR territory (International Traffic in Arms Regulations) and I'm not too sure about how much detail I can share about my project.
+Unfortunately this is leading a bit to close towards ITAR territory (International Traffic in Arms Regulations) and I'm not too sure about how much detail I can share about my project.
 
 In brief, KOBE uses a simple ML-based technique to iteratively optimise the launch trajectory of the projectile. I found that this technique is far more efficient than something like Monte Carlo which relies on 'spraying and praying' that at least one simulated projectile hits the target. This also means it's more robust at dealing with strong winds or targets that are moving extremely quickly.
 
@@ -160,7 +160,7 @@ The graph above shows 100 samples of KOBE computing the ideal launch trajectory 
 
 ## Future work
 
-While I believe KOBE is certainly the first of it's kind, it still requires a target to optimise for. I've been playing around with zero-shot image detection but it's still a struggle to determine distance and drone size. That being said there might be a Part II to this blog post depending on progress 👀.
+While I believe KOBE is certainly the first of it's kind, it still requires a target to optimise for. I've been playing around with zero-shot image detection but it's still a struggle to determine distance and drone size. That being said, there might be a Part II to this blog post depending on progress 👀.
 
 # Conclusion
 
