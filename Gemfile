@@ -16,3 +16,5 @@ gem "wdm", "~> 0.2.0", :platforms => [:mingw, :x64_mingw, :mswin]
 gem "webrick", "~> 1.9"
 
 gem "drb", "~> 2.2"
+
+gem "jekyll-include-cache"

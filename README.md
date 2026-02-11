@@ -4,4 +4,4 @@ This is a fork of [Chirpy](https://github.com/cotes2020/chirpy-starter), and is 
 
 ## Useful commands
 
-Local hosting: ```bundle exec jekyll s```
+Local hosting: ```bundle exec jekyll s --incremental```
