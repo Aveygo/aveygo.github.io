@@ -1,6 +1,6 @@
 ---
 title: A Real-Time Ballistics Calculator
-date: 2025-12-20
+date: 2026-01-10
 categories: [Exploration]
 tags: [Ballistics, GPU, Rust]
 description: How video games can help us calculate ballistic trajectories.
