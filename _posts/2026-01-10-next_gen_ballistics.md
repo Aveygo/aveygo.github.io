@@ -120,8 +120,6 @@ Here, we take steps that are half the distance to the target. This allows us to 
 
 # Results
 
-Once we implement this technique, we can see how it's dramatically better than other available calculators:
-
 ![Results](assets/media/ballistics/results.svg){:style="display:block; margin-left:auto; margin-right:auto; width: 100%;"}
 
 |       | AB Quantum      | py-ballisticcalc | Ballistics-engine | libballistics | KOBE      |
@@ -132,16 +130,40 @@ Once we implement this technique, we can see how it's dramatically better than o
 
 > A 68,421x speed increase when compared to libballistics while also being the most accurate rust implementation.
 
-## GPU Parallelization
+## The Second Side Quest: Doing more
 
-Because each trajectory calculation is completely independent, it can be easily parallelised on a GPU.
+Now that we have a performant and minimal physics simulation, we can begin making it more complicated and actually useful.
 
-This allows us to run a far more sophisticated analysis than would ever be practical on a CPU for "free" (excluding memory overhead). Instead of calculating one "perfect" trajectory, we calculate tens of thousands with slight variations in muzzle velocity, wind estimates, and barrel condition. The result is a probability distribution of impact points rather than a single prediction.
+### Hardware Acceleration
 
-There's quite a few intricacies involved in creating GPU compute shaders, and I'll be talking about it in Part II of this blog post when it comes out soon.  
+![Gui](assets/media/ballistics/gui.png){:style="display:block; margin-left:auto; margin-right:auto; width: 100%;"}
+
+Because each trajectory calculation is completely independent it can be easily parallelised on a GPU.
+
+This allows us to run a far more sophisticated analysis than would ever be practical on a CPU for "free" (excluding memory overhead). This means that instead of calculating one "perfect" trajectory, we calculate tens of thousands with slight variations in muzzle velocity, wind estimates, and barrel condition. The result is a probability distribution of impact points rather than a single prediction, allowing us to determine the probability of hitting a given target.
+
+### Dealing with Moving Targets
+
+Circling back to the beginning of this blog, this project was meant to simulate collisions with drones; but what if we could try and find optimal launch angles? 
+
+Unfortunately this is leading towards ITAR territory (International Traffic in Arms Regulations) and I'm not too sure about how much detail I can share about my project.
+
+In brief, KOBE uses a simple ML-based technique to iteratively optimise the launch trajectory of the projectile. I found that this technique is far more efficient than something like Monte Carlo which relies on 'spraying and praying' that at least one simulated projectile hits the target. This also means it's more robust at dealing with strong winds or targets that are moving extremely quickly.
+
+### Final Performance
+
+Once we add these additional features, we can use [criterion](https://github.com/criterion-rs/criterion.rs) to measure final performance:
+
+![Gui](assets/media/ballistics/performance.png){:style="display:block; margin-left:auto; margin-right:auto; width: 100%;"}
+
+The graph above shows 100 samples of KOBE computing the ideal launch trajectory of a 7.62×51mm NATO round at a target 1km away. Despite *also* simulating 50,000 impacts per sample, KOBE is still 4x faster than libballistics resolving a **single** path.
+
+## Future work
+
+While I believe KOBE is certainly the first of it's kind, it still requires a target to optimise for. I've been playing around with zero-shot image detection but it's still a struggle to determine distance and drone size. That being said there might be a Part II to this blog post depending on progress 👀.
 
 # Conclusion
 
-Ultimately, this project was a massive experiment, and I had a lot of fun learning about all these different technologies and how they can all satisfyingly align to solve a useful problem.
+Ultimately this project was a massive experiment and I had a lot of fun learning about all these different technologies and how they can all satisfyingly align to solve a useful problem.
 
-If you would like to learn more about this calculator, I have a [short report]({% link assets/KOBE Promotional.pdf %}) that might be of interest.
+If you would like to learn more about this calculator (or even play around with it), I have a [short report]({% link assets/KOBE Promotional.pdf %}) that might be of interest.
