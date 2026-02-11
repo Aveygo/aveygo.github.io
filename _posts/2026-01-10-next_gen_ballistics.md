@@ -18,7 +18,7 @@ I attended an [Australian Defense Force Hackathon]({% link _posts/2025-09-4-hack
 
 I wanted to offer a unique advancement to this field and found my calling when I saw that almost every single open source ballistics calculator is painfully slow. *So what if we write our own solution in Rust?*  
 
-This is a story that summarizes decades of ballistics advancements (or at least, whatever was declassified), cool low level tricks, and creating the first ever real-time ballistics calculator that can run two orders of magnitude faster than the current best. 
+This is a story that summarizes decades of ballistics advancements (or at least, whatever was declassified), cool low level tricks, and creating the first ever real-time ballistics calculator that can run **four orders of magnitude faster** than the current best. 
 
 ## What Makes a Bullet Move
 
@@ -63,7 +63,7 @@ If you want to dive deeper into the math, [JBM Ballistics](https://jbmballistics
 
 # Eureka!
 
-While you may think I wrote this blog to be about ballistics calculators, I really want to share my thought process and how I figured out a way to make a meaningful performance contribution to an already solved problem. Here, on the surface, it might seem like we are limited by the speed of the processor; we have a projectile, we compute the necessary forces, then iterate the simulation to compute the projectile's path. The key idea is that we shouldn't be attempting to optimize our physics simulation, but rather what we want it to do. 
+While you may think I wrote this blog to be about ballistics calculators, I also really want to share my thought process and how I figured out a way to make a meaningful performance contribution to an already solved problem. On the surface it might seem like we are limited by the speed of the processor; we have a projectile, we compute the necessary forces, then iterate the simulation to compute the projectile's path. The key idea is that we shouldn't be attempting to optimize our physics simulation, but rather what we want it to do. 
 
 ![SDF](assets/media/ballistics/optim.jpg){:style="display:block; margin-left:auto; margin-right:auto; width: 70%;"}
 
@@ -124,13 +124,13 @@ Once we implement this technique, we can see how it's dramatically better than o
 
 ![Results](assets/media/ballistics/results.svg){:style="display:block; margin-left:auto; margin-right:auto; width: 100%;"}
 
-|       | AB Quantum      | py-ballisticcalc | Ballistics-engine | libballistics | KOBE    |
-| ----- | --------------- | ---------------- | ----------------- | ------------- | ------- |
-| Time  | ~1200ms         | 2320ms           | 63ms              | 26ms          | 0.046ms |
-| Drop  | 11.13m          | 17.07m           | 6.91m             | 11.14m        | 11.19m  |
-| Error | N/A (reference) | +53%             | -38%              | +0.08%        | +0.5%   |
+|       | AB Quantum      | py-ballisticcalc | Ballistics-engine | libballistics | KOBE      |
+| ----- | --------------- | ---------------- | ----------------- | ------------- | --------- |
+| Time  | ~1200ms         | 2320ms           | 63ms              | 26ms          | 0.00038ms |
+| Drop  | 11.13m          | 17.07m           | 6.91m             | 11.14m        | 11.87m    |
+| Error | N/A (reference) | +53%             | -38%              | +0.08%        | +5.4%     |
 
-> A 120x speed increase when compared to libballistics while also being the most accurate rust implementation.
+> A 68,421x speed increase when compared to libballistics while also being the most accurate rust implementation.
 
 ## GPU Parallelization
 
