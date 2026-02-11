@@ -146,9 +146,7 @@ This allows us to run a far more sophisticated analysis than would ever be pract
 
 Circling back to the beginning of this blog, this project was meant to simulate ballistic engagements with drones; but what if we could try and find optimal launch angles? 
 
-Unfortunately this is leading a bit to close towards ITAR territory (International Traffic in Arms Regulations) and I'm not too sure about how much detail I can share about my project.
-
-In brief, KOBE uses a simple ML-based technique to iteratively optimise the launch trajectory of the projectile. I found that this technique is far more efficient than something like Monte Carlo which relies on 'spraying and praying' that at least one simulated projectile hits the target. This also means it's more robust at dealing with strong winds or targets that are moving extremely quickly.
+Unfortunately this is a bit in the technical weeds, so in brief, KOBE uses a simple ML-based technique to iteratively optimise the launch trajectory of the projectile. I found that this technique is far more efficient than something like Monte Carlo which relies on 'spraying and praying' that at least one simulated projectile hits the target. This also means it's more robust at dealing with strong winds or targets that are moving extremely quickly.
 
 ### Final Performance
 
